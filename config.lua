@@ -1,9 +1,9 @@
 Config = {}
 
-Config.Locale = "it"                            -- "it" or "en" (See locales folder)
+Config.Locale = "en"                            -- "it" or "en" (See locales folder)
 
-Config.timeToTeleport = 30                      -- In seconds
-Config.maxDistanceToTeleport = 10               -- In meters
+Config.timeToTeleport = 30                     -- In seconds (time it will take to start the teleport after you paid)
+Config.maxDistanceToTeleport = 10              -- In meters (max distance player is allowed to go until the teleport starts)
 Config.price = {
     item = "burger",                           -- Id of the item used as a currency
     quantity = 4                               -- Number of items necessary
@@ -21,7 +21,7 @@ Config.homes = {                                -- Orientation doesn't do anythi
 Config.MinusOne = true                          -- If you use txadmin or esx /coords keep this on true, basically it does (z - 1) because i need feet position and some methodes to get coords give you head coords
 Config.location = {
 
-    { name = "subway", x = -851.94, y = -159.46, z = 19.95, heading = 300.00,                   -- Use different names because i need them to differentiate markers
+    { name = "subway", x = -851.94, y = -159.46, z = 19.95, heading = 300.00,
     model = "a_m_m_tramp_01", gender = "male", animDict = "random@drunk_driver_1",
     animName = "drunk_driver_stand_loop_dd1", isRendered = true, ped = nil },
 
