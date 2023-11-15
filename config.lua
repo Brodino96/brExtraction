@@ -5,8 +5,8 @@ Config.Locale = "it"                            -- "it" or "en" (See locales fol
 Config.timeToTeleport = 30                      -- In seconds
 Config.maxDistanceToTeleport = 10               -- In meters
 Config.price = {
-    item = "crediti",                           -- Id of the item used as a currency
-    quantity = 1                                -- Number of items necessary
+    item = "burger",                           -- Id of the item used as a currency
+    quantity = 4                               -- Number of items necessary
 }
 
 Config.ignoreJob = true                         -- If "true" will ignore any job and go straight to Config.defaultHome
