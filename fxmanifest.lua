@@ -4,7 +4,7 @@ lua54 "yes"
 
 version "1.0"
 author "Brodino"
-description "An extraction script made by me c: \n used sjpfeiffer's ped_spawner code for creating peds"
+description "An extraction script made by me c: --- used sjpfeiffer's ped_spawner code for creating peds"
 
 client_scripts {
     "client.lua",
