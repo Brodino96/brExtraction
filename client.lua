@@ -92,7 +92,11 @@ function Menu(originX, originY, originZ)
                 title = _U("option1Title"),
                 description = _U("option1description"),
                 onSelect = function ()
-                    Alert(originX, originY, originZ)
+                    if Config.price.enabled then
+                        Alert(originX, originY, originZ)
+                    else
+                        LastChecks(originX, originY, originZ)
+                    end
                 end
             },
             {
@@ -110,7 +114,7 @@ function Menu(originX, originY, originZ)
 end
 
 function Alert(originX, originY, originZ)
-    
+
     -- Registering and opening the alert
     local alert = lib.alertDialog({
         header = _U("alertHeader"),
@@ -131,8 +135,13 @@ end
 
 function LastChecks(originX, originY, originZ)
 
-    -- Checks if you have enough items
-    local numberOfItems = exports.ox_inventory:GetItemCount(Config.price.item, nil, false)
+    local numberOfItems = 0
+    if Config.price.enabled then
+        -- Checks if you have enough items
+        numberOfItems = exports.ox_inventory:GetItemCount(Config.price.item, nil, false)
+    else
+        numberOfItems = Config.price.quantity
+    end
     if numberOfItems >= Config.price.quantity then
         
         -- Checks if he should ignores the job to teleport
@@ -140,7 +149,9 @@ function LastChecks(originX, originY, originZ)
 
             -- Actually teleporting and removing the money
             InizializeFastTravel(Config.defaultHome.x, Config.defaultHome.y, Config.defaultHome.z, originX, originY, originZ)
-            TriggerServerEvent("brFastTravel:payItem")
+            if Config.price.enabled then
+                TriggerServerEvent("brFastTravel:payItem")
+            end
 
         else
             -- Stats to check for each home location
@@ -149,7 +160,9 @@ function LastChecks(originX, originY, originZ)
                 -- If you have the correct job for that home it teleports you and remove the payment
                 if  PlayerData.job.name == v.jobname then
                     InizializeFastTravel(v.x, v.y, v.z, originX, originY, originZ)
-                    TriggerServerEvent("brFastTravel:payItem")
+                    if Config.price.enabled then
+                        TriggerServerEvent("brFastTravel:payItem")
+                    end
                 end
 
             end

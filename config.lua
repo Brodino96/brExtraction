@@ -5,6 +5,7 @@ Config.Locale = "en"                            -- "it" or "en" (See locales fol
 Config.timeToTeleport = 30                     -- In seconds (time it will take to start the teleport after you paid)
 Config.maxDistanceToTeleport = 10              -- In meters (max distance player is allowed to go until the teleport starts)
 Config.price = {
+    enabled = true,
     item = "burger",                           -- Id of the item used as a currency
     quantity = 4                               -- Number of items necessary
 }
