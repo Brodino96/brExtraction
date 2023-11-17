@@ -25,3 +25,14 @@ https://github.com/Brodino96/brExtraction/wiki/brExtraction's-documentation <br>
 MIT
 
 ***
+
+# TODO
+
+- Spanish translation
+- Activate/deactivate payment
+- Activate/deactivate damage check
+- Activate/deactivate range check
+- Start to use the heading for for teleport destination
+- QBCore support
+- More inventories support
+- Custom animations
